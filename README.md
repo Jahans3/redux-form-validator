@@ -2,7 +2,20 @@
 
 A simple tool to help with sync validation in Redux Form.
 
-#### Why?
+* [Install][#install]
+* [Why?](#why)
+
+#### Install
+```
+yarn add rf-validator
+```
+
+```
+import validator from 'rf-validator'
+const validator = require('rf-validator')
+```
+
+## Why?
 
 Sync validation in Redux Form is straight-forward:
 ```
@@ -55,4 +68,12 @@ const validate = validator({
   username: [validateEmpty, val => validateLength(val, 3)],
   password: [validateEmpty, val =? validateLength(val, 8)]
 })
+```
+
+Usage is exactly the same; pass to the `reduxForm` decorator:
+```
+export default reduxForm({
+  form: 'myForm',
+  validate
+})(MyComponent)
 ```
