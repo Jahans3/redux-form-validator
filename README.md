@@ -10,7 +10,7 @@ A simple tool to help with sync validation in Redux Form.
 yarn add rf-validator
 ```
 
-```
+```js
 import validator from 'rf-validator'
 const validator = require('rf-validator').default
 ```
@@ -18,7 +18,7 @@ const validator = require('rf-validator').default
 ## Why?
 
 Sync validation in Redux Form is straight-forward:
-```
+```js
 const validate = values => {
   const errors = {}
 
@@ -31,7 +31,7 @@ const validate = values => {
 ```
 
 Handling validation like this can lead to a lot of repition, so we create more generic validation functions:
-```
+```js
 const validateEmpty = value => !value ? 'Value cannot be empty' : undefined
 
 const validate = values => {
@@ -44,7 +44,7 @@ const validate = values => {
 ```
 
 However even doing this can lead to a lot of unnecessary boilerplate once we introduce more than one rule for multiple fields:
-```
+```js
 const validate = values => {
   const errors = {}
   
@@ -63,7 +63,7 @@ const validate = values => {
 ```
 
 Using this package we can simply pass lists of validators to properties corresponding with fields to achieve the same result:
-```
+```js
 const validate = validator({
   username: [validateEmpty, val => validateLength(val, 3)],
   password: [validateEmpty, val => validateLength(val, 8)]
@@ -71,7 +71,7 @@ const validate = validator({
 ```
 
 `validator(rules)` returns a function which we simply pass to `reduxForm`:
-```
+```js
 export default reduxForm({
   form: 'myForm',
   validate
@@ -83,24 +83,24 @@ export default reduxForm({
 #### `validator`
 
 Accepts an object with propeties matching the names of the fields to validate:
-```
+```js
 validator({ someField })
 ```
 
 Each property can contain a validator function:
-```
+```js
 validator({ someField: validateEmpty })
 ```
 
 To pass multiple validation rules simply pass an array of validators, validators at the start of the array will be called first:
-```
+```js
 validator({
   someField: [validateEmpty, validateLength, validateExists]
 })
 ```
 
 Each validator function should return a falsey value if the validation rule passes:
-```
+```js
 const validateEmpty = value => {
   if (!value) {
     return 'Cannot be empty!'
