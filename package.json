@@ -1,6 +1,6 @@
 {
   "name": "rf-validator",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "A simple tool to make Redux Form validation a bit simpler",
   "main": "lib/validator.js",
   "repository": "https://github.com/Jahans3/redux-form-validator.git",
@@ -8,6 +8,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js"
   },
+  "keywords": ["redux-form", "validation", "validate"],
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "6.26.0",
