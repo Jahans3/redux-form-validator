@@ -12,7 +12,7 @@ yarn add rf-validator
 
 ```
 import validator from 'rf-validator'
-const validator = require('rf-validator')
+const validator = require('rf-validator').default
 ```
 
 ## Why?
