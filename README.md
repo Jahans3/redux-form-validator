@@ -32,7 +32,7 @@ const validate = values => {
 
 Handling validation like this can lead to a lot of repition, so we create more generic validation functions:
 ```
-const validateEmpty = value => !!value ? 'Value cannot be empty' : undefined
+const validateEmpty = value => !value ? 'Value cannot be empty' : undefined
 
 const validate = values => {
   const errors = {}
