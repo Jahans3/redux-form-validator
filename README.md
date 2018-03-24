@@ -2,9 +2,6 @@
 
 A simple tool to help with sync validation in Redux Form.
 
-* [Install][#install]
-* [Why?](#why)
-
 #### Install
 ```
 yarn add rf-validator
