@@ -66,7 +66,7 @@ Using this package we can simply pass lists of validators to properties correspo
 ```
 const validate = validator({
   username: [validateEmpty, val => validateLength(val, 3)],
-  password: [validateEmpty, val =? validateLength(val, 8)]
+  password: [validateEmpty, val => validateLength(val, 8)]
 })
 ```
 
@@ -84,7 +84,7 @@ export default reduxForm({
 
 Accepts an object with propeties matching the names of the fields to validate:
 ```
-validator({ someField: })
+validator({ someField })
 ```
 
 Each property can contain a validator function:
@@ -94,7 +94,9 @@ validator({ someField: validateEmpty })
 
 To pass multiple validation rules simply pass an array of validators, validators at the start of the array will be called first:
 ```
-validator({ someField: [validateEmpty, validateLength, validateExists] })
+validator({
+  someField: [validateEmpty, validateLength, validateExists]
+})
 ```
 
 Each validator function should return a falsey value if the validation rule passes:
