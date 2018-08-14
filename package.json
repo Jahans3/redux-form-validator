@@ -1,6 +1,6 @@
 {
   "name": "rf-validator",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "A simple tool to make Redux Form validation a bit simpler",
   "main": "lib/validator.js",
   "repository": "https://github.com/Jahans3/redux-form-validator.git",
