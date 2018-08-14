@@ -15,8 +15,11 @@ export default function validate (validators: Object): Function {
           ? validators[prop]
           : [validators[prop]]
         const first: ?Function = rules.find((validator: Function): ?string => validator(values[prop]))
+        const result = first(values[prop])
 
-        errors[prop] = first && first(values[prop])
+        if (result) {
+          errors[prop] = result
+        }
       }
     }
 
