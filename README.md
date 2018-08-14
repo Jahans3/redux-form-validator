@@ -1,6 +1,8 @@
-# Redux Form Validator
+# Redux Form* Validator
 
-A simple tool to help with sync validation in Redux Form.
+A simple tool to help with sync validation in Redux Form*.
+
+\* Also works with Formik, and any other form library with the same API
 
 * [Why?](#why)
 * [API](#api)
@@ -47,7 +49,7 @@ However even doing this can lead to a lot of unnecessary boilerplate once we int
 ```js
 const validate = values => {
   const errors = {}
-  
+
   const isUsernameEmpty = validateEmpty(values.username)
   const isUsernameLongEnough = validateLength(values.username, 3)
 
